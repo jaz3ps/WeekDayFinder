@@ -47,6 +47,8 @@ class ViewController: UIViewController {
             if day >= 1 && day <= 31 && month >= 1 && month <= 12 {
                 let weekday = dateFormatter.string(from: date)
                 resultLabel.text = weekday
+            }else if month == 2 && day > 29 {
+                warningAlert(withTitle: "Error!", withMessage: "There are maximum 29 days in February, please enter the correct Date!")
             }else{
                 warningAlert(withTitle: "Error!", withMessage: "Wrong Date, please enter the correct Date!")
             }
